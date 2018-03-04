@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:theme="@style/AppTheme.DefaultActivity"
+    android:background="@color/colorPrimaryDark" >
+
+    <!--Custom appearance for an item in a list-->
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:id="@+id/layout_description"
+        android:layout_below="@+id/layout_name"
+        android:singleLine="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:id="@+id/layout_name"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/uploaded_layout"
+        android:layout_toRightOf="@+id/layout_name"
+        android:layout_toEndOf="@+id/layout_name"
+        android:src="@android:drawable/ic_menu_upload"
+        android:layout_marginLeft="170dp"
+        android:layout_marginStart="170dp"
+        android:contentDescription="@string/list_item_uploaded" />
+</RelativeLayout>
