@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:theme="@style/AppTheme.DefaultActivity"
-    android:background="@color/colorPrimaryDark" >
+    android:background="@color/color_background"
+    android:padding="7dp">
 
     <!--Custom appearance for an item in a list-->
 
@@ -25,17 +26,18 @@
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:singleLine="true"
+        android:textColor="@color/color_layout_names"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="22sp" />
 
     <ImageView
+        android:id="@+id/uploaded_layout"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/uploaded_layout"
-        android:layout_toRightOf="@+id/layout_name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_toEndOf="@+id/layout_name"
-        android:src="@android:drawable/ic_menu_upload"
-        android:layout_marginLeft="170dp"
-        android:layout_marginStart="170dp"
-        android:contentDescription="@string/list_item_uploaded" />
+        android:layout_toRightOf="@+id/layout_name"
+        android:contentDescription="@string/list_item_uploaded"
+        android:src="@drawable/ic_cloud_upload_black" />
 </RelativeLayout>

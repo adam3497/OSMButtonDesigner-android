@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:theme="@style/AppTheme.DefaultActivity"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/color_background"
     tools:openDrawer="start">
 
     <!--App bar-->
@@ -23,9 +23,10 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:itemTextColor="#fff"
-        app:itemIconTint="#fff"
-        android:background="@color/colorPrimary"
+        app:itemTextColor="#000"
+        android:focusableInTouchMode="true"
+        app:itemIconTint="@color/color_layout_names"
+        android:background="@color/color_background"
         app:headerLayout="@layout/nav_bar_header"
         app:menu="@menu/nav_bar_options" />
 

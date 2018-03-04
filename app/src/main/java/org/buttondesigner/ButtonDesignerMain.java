@@ -1,8 +1,10 @@
 package org.buttondesigner;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.ContextMenu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.buttondesigner.listutils.CustomAdapter;
 import org.buttondesigner.listutils.ListItem;
@@ -35,6 +38,7 @@ public class ButtonDesignerMain extends AppCompatActivity
         listLayoutContainer = findViewById(R.id.layouts_created);
         customAdapter = new CustomAdapter(this, getArrayItems());
         listLayoutContainer.setAdapter(customAdapter);
+        registerForContextMenu(listLayoutContainer);
     }
 
     /**
@@ -63,7 +67,7 @@ public class ButtonDesignerMain extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });
@@ -120,5 +124,59 @@ public class ButtonDesignerMain extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.layouts_created_menu, menu);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        switch (item.getItemId()){
+
+            case R.id.upload_item_list:
+                Snackbar snackbar1 = Snackbar.make(fab, "Your layout is uploaded", Snackbar.LENGTH_SHORT);
+
+                View sbView1 = snackbar1.getView();
+                TextView textView1 = (TextView) sbView1.findViewById(android.support.design.R.id.snackbar_text);
+                textView1.setTextColor(Color.WHITE);
+                snackbar1.show();
+                break;
+
+            case R.id.edit_item_list:
+                Snackbar snackbar2 = Snackbar.make(fab, "Preparing to edit", Snackbar.LENGTH_SHORT);
+
+                View sbView2 = snackbar2.getView();
+                TextView textView2 = (TextView) sbView2.findViewById(android.support.design.R.id.snackbar_text);
+                textView2.setTextColor(Color.WHITE);
+                snackbar2.show();
+                break;
+
+            case R.id.delete_item_list:
+                Snackbar snackbar3 = Snackbar.make(fab, "Your layout is deleted", Snackbar.LENGTH_LONG)
+                        .setAction("UNDO", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Snackbar snackbar = Snackbar.make(fab, "Your layout is restored", Snackbar.LENGTH_SHORT);
+                                View sbView = snackbar.getView();
+                                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                                textView.setTextColor(Color.WHITE);
+                                snackbar.show();
+                            }
+                        });
+
+                snackbar3.setActionTextColor(getResources().getColor(R.color.color_layout_names));
+
+                View sbView3 = snackbar3.getView();
+                TextView textView3 = (TextView) sbView3.findViewById(android.support.design.R.id.snackbar_text);
+                textView3.setTextColor(Color.WHITE);
+                snackbar3.show();
+                break;
+        }
+
+        return super.onContextItemSelected(item);
     }
 }
