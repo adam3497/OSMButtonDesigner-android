@@ -4,35 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="6dp"
-    android:theme="@style/AppTheme.DefaultActivity"
     android:background="@color/color_background"
+    android:theme="@style/AppTheme.DefaultActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="org.buttondesigner.ButtonDesignerMain"
+    tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/app_bar">
 
-    <FrameLayout
-        android:layout_weight="1"
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:padding="3dp">
+    <!--In this list the created layouts will appears-->
+    <ListView
+        android:id="@+id/created_layouts_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!--In this list the created layouts will appears-->
-        <ListView
-            android:id="@id/android:list"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"></ListView>
+    </ListView>
 
-        <TextView
-            android:id="@+id/empty_list"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:padding="5dp"
-            style="@android:style/TextAppearance.Large"/>
-    </FrameLayout>
-
-
+    <TextView
+        android:id="@+id/empty_list_text"
+        style="@android:style/TextAppearance.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="@color/text_color"
+        android:text="@string/empty_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:itemTextColor="#000"
+        app:itemTextColor="@color/text_color"
         android:focusableInTouchMode="true"
         app:itemIconTint="@color/color_layout_names"
         android:background="@color/color_background"

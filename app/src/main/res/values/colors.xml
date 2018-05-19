@@ -7,10 +7,12 @@
 
     <color name="center_color">#d32f2f</color>
     <!--Secondary Colors-->
-    <color name="colorSecondary">#29b6f6</color>
-    <color name="colorSecondaryDark">#0086c3</color>
-    <color name="colorAccent2">#73e8ff</color>
+    <color name="colorSecondary">#1b3440</color>
+    <color name="colorSecondaryDark">#1c2e36</color>
+    <color name="colorAccent2">#365e66</color>
 
     <color name="color_layout_names">#FF0040</color>
-    <color name="color_background">#fff</color>
+    <color name="color_background">#1b3440</color>
+    <drawable name="pressed_background">#1c2e36</drawable>
+    <color name="text_color">#fff</color>
 </resources>

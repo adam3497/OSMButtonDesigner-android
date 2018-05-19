@@ -1,6 +1,6 @@
 package org.buttondesigner;
 
-import android.app.ListActivity;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,9 +25,22 @@ import org.buttondesigner.listutils.CustomAdapter;
 import org.buttondesigner.listutils.ListItem;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class ButtonDesignerMain extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, ListActivity {
+        implements NavigationView.OnNavigationItemSelectedListener {
+
+    // Array of strings for ListView Title
+    String[] listviewTitle = new String[]{
+            "ListView Title 1", "ListView Title 2", "ListView Title 3", "ListView Title 4",
+            "ListView Title 5", "ListView Title 6", "ListView Title 7", "ListView Title 8",
+    };
+
+    String[] listviewShortDescription = new String[]{
+            "Android ListView Short Description", "Android ListView Short Description", "Android ListView Short Description", "Android ListView Short Description",
+            "Android ListView Short Description", "Android ListView Short Description", "Android ListView Short Description", "Android ListView Short Description",
+    };
 
     private ListView listLayoutContainer;
     private CustomAdapter customAdapter;
@@ -37,30 +51,38 @@ public class ButtonDesignerMain extends AppCompatActivity
         setContentView(R.layout.button_designer);
         initializeBarElements();
 
-        getListView()
-        customAdapter = new CustomAdapter(this, getArrayItems());
-        listLayoutContainer.setAdapter(customAdapter);
+        List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
+
+        for (int i = 0; i < 8; i++) {
+            HashMap<String, String> hm = new HashMap<String, String>();
+            hm.put("listview_title", listviewTitle[i]);
+            hm.put("listview_description", listviewShortDescription[i]);
+            aList.add(hm);
+        }
+
+        String[] from = {"listview_title", "listview_description"};
+        int[] to = {R.id.layout_name, R.id.layout_description};
+
+        SimpleAdapter simpleAdapter = new SimpleAdapter(getBaseContext(), aList, R.layout.list_items, from, to);
+        listLayoutContainer = (ListView) findViewById(R.id.created_layouts_list);
+        listLayoutContainer.setAdapter(simpleAdapter);
+
         registerForContextMenu(listLayoutContainer);
         listLayoutContainer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getApplicationContext(), "You press a item list", Toast.LENGTH_SHORT).show();
+                view.setSelected(true);
             }
         });
-    }
 
-    /**
-     * This method create a new array list with different items
-     * @return ArrayList<ListItem> object
-     */
-    private ArrayList<ListItem> getArrayItems(){
-        ArrayList<ListItem> listItems = new ArrayList<>();
-        listItems.add(new ListItem("Layout Name", "Description will be here"));
-        listItems.add(new ListItem("Layout Name", "Description will be here"));
-        listItems.add(new ListItem("Layout Name", "Description will be here"));
-        listItems.add(new ListItem("Layout Name", "Description will be here"));
-
-        return listItems;
+        TextView empty_message = (TextView) findViewById(R.id.empty_list_text);
+        if(!aList.isEmpty()){
+            empty_message.setVisibility(View.INVISIBLE);
+        }
+        else{
+            empty_message.setVisibility(View.VISIBLE);
+        }
     }
 
     /**

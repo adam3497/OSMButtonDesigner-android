@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:theme="@style/AppTheme.DefaultActivity"
-    android:background="@color/color_background"
+    android:background="@drawable/list_selector"
     android:padding="7dp">
 
     <!--Custom appearance for an item in a list-->
@@ -13,6 +13,7 @@
         android:id="@+id/layout_description"
         android:layout_below="@+id/layout_name"
         android:singleLine="true"
+        android:textColor="@color/text_color"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp" />
 
@@ -39,5 +40,5 @@
         android:layout_toEndOf="@+id/layout_name"
         android:layout_toRightOf="@+id/layout_name"
         android:contentDescription="@string/list_item_uploaded"
-        android:src="@drawable/ic_cloud_upload_black" />
+        android:src="@drawable/ic_cloud_upload_white" />
 </RelativeLayout>
