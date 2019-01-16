@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Primary colors-->
-    <color name="colorPrimary">#9e9e9e</color>
-    <color name="colorPrimaryDark">#707070</color>
-    <color name="colorAccent">#FF0040</color>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#101010</color>
+    <color name="colorAccent">#208b9d</color>
 
-    <color name="center_color">#d32f2f</color>
+    <color name="center_color">#5dbbce</color>
     <!--Secondary Colors-->
-    <color name="colorSecondary">#1b3440</color>
-    <color name="colorSecondaryDark">#1c2e36</color>
-    <color name="colorAccent2">#365e66</color>
+    <color name="colorSecondary">#484848</color>
+    <color name="colorSecondaryDark">#212121</color>
+    <color name="colorAccent2">#737373</color>
 
-    <color name="color_layout_names">#FF0040</color>
-    <color name="color_background">#1b3440</color>
-    <drawable name="pressed_background">#1c2e36</drawable>
-    <color name="text_color">#fff</color>
+    <color name="color_text">#fff</color>
+    <drawable name="pressed_background">#737373</drawable>
+
+    <!--Status bar gradient color-->
+    <color name="status_bar_color_up">#101010</color>
+    <color name="status_bar_color_middle">#212121</color>
+    <color name="status_bar_color_bottom">#424242</color>
 </resources>

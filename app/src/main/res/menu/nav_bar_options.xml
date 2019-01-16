@@ -7,19 +7,19 @@
         <item
             android:id="@+id/activity_main_option"
             android:icon="@drawable/ic_home_white"
-            android:title="Home" />
+            android:title="@string/action_home" />
         <item
             android:id="@+id/editor_option"
             android:icon="@drawable/ic_create_white"
-            android:title="Editor" />
+            android:title="@string/action_editor" />
         <item
             android:id="@+id/settings_option"
             android:icon="@drawable/ic_settings_white"
-            android:title="Settings" />
+            android:title="@string/action_settings" />
         <item
             android:id="@+id/info_option"
             android:icon="@drawable/ic_info_white"
-            android:title="About" />
+            android:title="@string/action_about" />
     </group>
 
 </menu>

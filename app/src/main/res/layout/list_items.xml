@@ -13,7 +13,7 @@
         android:id="@+id/layout_description"
         android:layout_below="@+id/layout_name"
         android:singleLine="true"
-        android:textColor="@color/text_color"
+        android:textColor="@color/color_text"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp" />
 
@@ -27,7 +27,7 @@
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:singleLine="true"
-        android:textColor="@color/color_layout_names"
+        android:textColor="@color/color_text"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="22sp" />
 

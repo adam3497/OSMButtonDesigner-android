@@ -198,7 +198,7 @@ public class ButtonDesignerMain extends AppCompatActivity
                             }
                         });
 
-                snackbar3.setActionTextColor(getResources().getColor(R.color.color_layout_names));
+                snackbar3.setActionTextColor(getResources().getColor(R.color.colorAccent));
 
                 View sbView3 = snackbar3.getView();
                 TextView textView3 = (TextView) sbView3.findViewById(android.support.design.R.id.snackbar_text);
