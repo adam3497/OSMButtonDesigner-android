@@ -1,2 +1,2 @@
-# OSMButtonDesigner-android
-App to create button layouts for OSMTracker-android
+# Tracker Layout Designer
+App to create layouts for OSMTracker-android
