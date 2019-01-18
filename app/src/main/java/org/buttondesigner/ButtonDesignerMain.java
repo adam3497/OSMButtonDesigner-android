@@ -168,7 +168,7 @@ public class ButtonDesignerMain extends AppCompatActivity
         switch (item.getItemId()){
 
             case R.id.upload_item_list:
-                Snackbar snackbar1 = Snackbar.make(fab, "Your layout is uploaded", Snackbar.LENGTH_SHORT);
+                Snackbar snackbar1 = Snackbar.make(fab, "Your layout was uploaded", Snackbar.LENGTH_SHORT);
 
                 View sbView1 = snackbar1.getView();
                 TextView textView1 = (TextView) sbView1.findViewById(android.support.design.R.id.snackbar_text);
@@ -186,11 +186,11 @@ public class ButtonDesignerMain extends AppCompatActivity
                 break;
 
             case R.id.delete_item_list:
-                Snackbar snackbar3 = Snackbar.make(fab, "Your layout is deleted", Snackbar.LENGTH_LONG)
+                Snackbar snackbar3 = Snackbar.make(fab, "Your layout was deleted", Snackbar.LENGTH_LONG)
                         .setAction("UNDO", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Snackbar snackbar = Snackbar.make(fab, "Your layout is restored", Snackbar.LENGTH_SHORT);
+                                Snackbar snackbar = Snackbar.make(fab, "Your layout was restored", Snackbar.LENGTH_SHORT);
                                 View sbView = snackbar.getView();
                                 TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
                                 textView.setTextColor(Color.WHITE);
